@@ -22,19 +22,30 @@ ChartJS.register(
 
 const scales = {
   x: {
+    stacked: true,
+    r: {
+      ticks: {
+        backdropPadding: {
+          x: 10,
+          y: 9,
+        },
+      },
+    },
     position: "bottom",
-    grid: { color: "white" },
+    grid: { color: "white",  },
     ticks: {
       color: "white",
-    //   autoSkip: true,
-    //   autoSkipPadding: 50,
-    //   maxRotation: 0,
+      //   autoSkip: true,
+      //   autoSkipPadding: 50,
+      //   maxRotation: 0,
+      
     },
     border: {
       color: "white",
     },
   },
   y: {
+    stacked: true,
     border: {
       color: "white",
     },
@@ -47,6 +58,7 @@ const scales = {
     grid: {
       borderColor: "white",
       color: "white",
+      tickWidth: 2,
     },
     title: {
       display: true,
@@ -59,8 +71,12 @@ const scales = {
 export const options = {
   responsive: true,
   scales: scales,
+  layout: {
+    padding: 20,
+  },
   plugins: {
     legend: {
+      display: false,
       position: "top",
     },
     title: {
@@ -72,20 +88,72 @@ export const options = {
 
 const labels = ["January", "February", "March", "April", "May", "June", "July"];
 
-export const data = {
-  labels,
+const data = {
+  labels: ["01-2024", "02-2024", "03-2024", "04-2024"],
   datasets: [
     {
-      label: "Dataset 1",
-      data: labels.map(() => Math.round(Math.random() * 1000)),
-      backgroundColor: "blue",
-      borderColor: "white",
-      color: "blue"
+      backgroundColor: "#d32f2f",
+      borderColor: "#d32f2f",
+      // cubicInterpolationMode: "monotone",
+      data: [30, 35, 17, 6],
+      fill: false,
+      label: "10000064 | HARSH SOLDER",
+      // tension: 0.6,
+      stack: "stack 0",
     },
     {
-      label: "Dataset 2",
-      data: labels.map(() => Math.round(Math.random() * 1000)),
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
+      backgroundColor: "#FFC107",
+      borderColor: "#FFC107",
+      // cubicInterpolationMode: "monotone",
+      data: [427, 438, 340, 87],
+      fill: false,
+      label: "10000072 | SHREE VYANKATESH ENGG. INDUSTRIES",
+      // tension: 0.6,
+      stack: "stack 1",
+    },
+    {
+      backgroundColor: "#64b5f6",
+      borderColor: "#64b5f6",
+      // cubicInterpolationMode: "monotone",
+      data: [2, 0, 0, 1],
+      fill: false,
+      label: "10000223 | ELANTAS Beck India Ltd",
+      // tension: 0.6,
+      stack: "stack 1",
+
+    },
+
+    {
+      backgroundColor: "#f9a825",
+      borderColor: "#f9a825",
+      // cubicInterpolationMode: "monotone",
+      data: [1, 0, 0, 0],
+      fill: false,
+      label: "10000232 | NAVION ELECTRONICS PVT.LTD.",
+      // tension: 0.6,
+      stack: "stack 3",
+    },
+
+    {
+      backgroundColor: "#b2ff59",
+      borderColor: "#b2ff59",
+      // cubicInterpolationMode: "monotone",
+      data: [2, 0, 0, 0],
+      fill: false,
+      label: "10000322 | POLYNOVA   RESINS",
+      // tension: 0.6,
+      stack: "stack 3",
+    },
+    {
+      backgroundColor: "#4fb4d1",
+      borderColor: "#4fb4d1",
+      // cubicInterpolationMode: "monotone",
+      data: [63, 58, 52, 17],
+      // fill: false,
+      label: "12000431 | nikita rubber products",
+      // tension: 0.6,
+      stack: "stack 1",
+
     },
   ],
 };

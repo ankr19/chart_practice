@@ -2,6 +2,7 @@
 import Image from "next/image";
 import LineChart from "@/components/LineChart";
 import PieChartG from "@/components/PieChart";
+import LineChart2 from "@/components/LineChart2";
 
 export default function Home() {
   const handleClick = async()=> {
@@ -15,6 +16,7 @@ export default function Home() {
       send mail
     </button>
     <PieChartG/>
+    <LineChart2/>
     </>
   );
 }
