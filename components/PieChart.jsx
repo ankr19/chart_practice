@@ -74,28 +74,27 @@ const renderCustomizedLabel = (props) => {
 
 export default function PieChartG() {
   return (
-    <div className="bg-gradient-to-r from-[#EFFDEE] to-[#E4FDE1] rounded-lg p-5 m-5 border-transparent w-[40%] h-[40%]">
+    <div className="bg-gradient-to-r from-[#EFFDEE] to-[#E4FDE1] relative rounded-lg p-5 m-5 border-transparent w-[40%] h-[40%]">
       <div>
-
-      <ResponsiveContainer width={"80%"} height={300}>
-        <PieChart width={"50%"} height={"50%"}>
-          <Pie
-            data={data}
-            cx="50%"
-            cy="50%"
-            labelLine={false}
-            label={renderCustomizedLabel}
-            outerRadius={80}
-            fill="#8884d8"
-            dataKey="value"
+        <ResponsiveContainer width={"80%"} height={300}>
+          <PieChart width={"50%"} height={"50%"}>
+            <Pie
+              data={data}
+              cx="50%"
+              cy="50%"
+              labelLine={false}
+              label={renderCustomizedLabel}
+              outerRadius={80}
+              fill="#8884d8"
+              dataKey="value"
             >
-            {data.map((entry, index) => (
-              <Cell key={index} fill={COLORS[index % COLORS.length]} />
-            ))}
-          </Pie>
-        </PieChart>
-      </ResponsiveContainer>
-            </div>
+              {data.map((entry, index) => (
+                <Cell key={index} fill={COLORS[index % COLORS.length]} />
+              ))}
+            </Pie>
+          </PieChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 }
